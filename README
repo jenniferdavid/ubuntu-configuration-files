@@ -1,0 +1,31 @@
+Repository: ubuntu-configuration-files
+
+Version: 1.0
+
+Important Configuration Files for a Ubuntu system.
+
+License
+=======
+GNU GPL v3.0
+http://www.gnu.org/licenses/gpl-3.0.txt
+
+Release Notes
+=============
+Distribution: Ubuntu
+Release     : 12.04 LTS
+Architecture: amd64
+
+Details
+=======
+etc
+	apt
+		sources.list
+home
+	jalan
+		.zshrc
+
+Known Issues
+============
+No issues.
+
+ -- ranjanashish
