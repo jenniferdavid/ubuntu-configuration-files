@@ -17,12 +17,14 @@ Architecture: amd64
 
 Details
 =======
-etc
-	apt
-		sources.list
-home
-	jalan
-		.zshrc
+etc/
+	+-- apt/
+		+-- sources.list
+	+-- java-sun/
+		+-- swing.properties
+home/
+	+-- jalan/
+		+-- .zshrc
 
 Known Issues
 ============
