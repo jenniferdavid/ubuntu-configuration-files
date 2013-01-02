@@ -29,44 +29,43 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git pip python zsh-syntax-highlighting)
+plugins=(git history-substring-search pip python zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# ranjanashish: zsh
-###################
-unsetopt correctall
-
-# ranjanashish: java
-# Java applications which share JAVA_OPTS environment variable are:
-# 1. gradle
-# 2. gradlew
-###################################################################
-export JAVA_OPTS='-Dhttp.proxyHost=proxyhostURL -Dhttp.proxyPort=proxyPortNumber -Dhttp.proxyUser=someUserName -Dhttp.proxyPassword=somePassword'
-
 # ranjanashish: Robot Operating System (ROS)
 ############################################
-source /opt/ros/fuerte/setup.zsh
-export ROS_PACKAGE_PATH=~/ros_workspace:$ROS_PACKAGE_PATH
-export ROS_WORKSPACE=~/ros_workspace
-export ARIA=~/ros_workspace/ros_repo/amor-ros-pkg/Aria/build/Aria-2.7.2
-
-# ranjanashish: Modular OpenRobots Simulation Engine (MORSE)
-############################################################
-alias morse='/opt/morse/bin/morse'
-export MORSE_ROOT=/opt/morse
-export PYTHONPATH=/opt/morse/lib/python3/dist-packages:$PYTHONPATH
-
-# ranjanashish: Environment Variables
-#####################################
-export http_proxy=http://username:password@proxy:port
+source /opt/ros/groovy/setup.zsh
 
 # ranjanashish: Aliases
 #######################
-alias -g pip='pip --proxy "username:password@proxy:port"'
-alias eclipse='~/Ubuntu/eclipse/eclipse &'
+alias -g g++='g++ -Wall -std=c++11'
+alias -g pip='pip --proxy "username:password@proxyaddress:proxyport"'
 alias cling='~/Ubuntu/cling/bin/cling'
-alias fuzzylite-gui='~/Ubuntu/fuzzylite-1.5/gui/dist/gui &'
-alias weka='java -Xmx1000M -jar ~/Ubuntu/weka-3-7-7/weka.jar &'
+
+# ranjanashish: Environment Variables
+#####################################
+ANDROID_NDK_HOME=~/android/android-ndk
+ANDROID_SDK_HOME=~/android/android-sdk
+ARIA=~/ros_workspace/ros_repo/amor-ros-pkg/Aria/build/Aria-2.7.2
+JAVA_HOME=/usr/lib/jvm/jdk1.6.0_35
+JAVA_OPTS='-Dhttp.proxyHost=proxyhostURL -Dhttp.proxyPort=proxyPortNumber -Dhttp.proxyUser=someUserName -Dhttp.proxyPassword=somePassword'
+ROS_PACKAGE_PATH=~/ros_workspace:$ROS_PACKAGE_PATH
+ROS_WORKSPACE=~/ros_workspace
+http_proxy="http://username:password@proxyaddress:proxyport"
+
+# ranjanashish: android
+#######################
+PATH=$ANDROID_SDK_HOME/tools:$ANDROID_SDK_HOME/platform-tools:$PATH
+
+# ranjanashish: java
+####################
+PATH=$JAVA_HOME/bin:$PATH
+
+# ranjanashish: zsh
+###################
+unsetopt correctall
+export http_proxy
+
